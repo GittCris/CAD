@@ -1,0 +1,78 @@
+Weak Scaling
+Running with 1 threads and N=250
+------------------------------------
+Matrix size:            250x250
+Maximum iterations:     20000
+Convergence threshold:  0.000100
+------------------------------------
+Solution error = 0.012370
+Iterations     = 838
+Total runtime  = 0.037285 seconds
+Solver runtime = 0.036663 seconds
+------------------------------------
+Running with 2 threads and N=500
+------------------------------------
+Matrix size:            500x500
+Maximum iterations:     20000
+Convergence threshold:  0.000100
+------------------------------------
+Solution error = 0.024871
+Iterations     = 1532
+Total runtime  = 0.145714 seconds
+Solver runtime = 0.137164 seconds
+------------------------------------
+Running with 4 threads and N=1000
+------------------------------------
+Matrix size:            1000x1000
+Maximum iterations:     20000
+Convergence threshold:  0.000100
+------------------------------------
+Solution error = 0.049975
+Iterations     = 2929
+Total runtime  = 0.809370 seconds
+Solver runtime = 0.779182 seconds
+------------------------------------
+Running with 6 threads and N=1500
+------------------------------------
+Matrix size:            1500x1500
+Maximum iterations:     20000
+Convergence threshold:  0.000100
+------------------------------------
+Solution error = 0.074985
+Iterations     = 4133
+Total runtime  = 5.893120 seconds
+Solver runtime = 5.803000 seconds
+------------------------------------
+Running with 8 threads and N=2000
+------------------------------------
+Matrix size:            2000x2000
+Maximum iterations:     20000
+Convergence threshold:  0.000100
+------------------------------------
+Solution error = 0.099883
+Iterations     = 5402
+Total runtime  = 16.800437 seconds
+Solver runtime = 16.605700 seconds
+------------------------------------
+Running with 10 threads and N=2500
+------------------------------------
+Matrix size:            2500x2500
+Maximum iterations:     20000
+Convergence threshold:  0.000100
+------------------------------------
+Solution error = 0.124971
+Iterations     = 6621
+Total runtime  = 27.354194 seconds
+Solver runtime = 26.974820 seconds
+------------------------------------
+Running with 12 threads and N=3000
+------------------------------------
+Matrix size:            3000x3000
+Maximum iterations:     20000
+Convergence threshold:  0.000100
+------------------------------------
+Solution error = 0.149981
+Iterations     = 7727
+Total runtime  = 43.359629 seconds
+Solver runtime = 42.778477 seconds
+------------------------------------

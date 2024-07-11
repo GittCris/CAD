@@ -1,28 +1,9 @@
-//
-// Implementation of the iterative Jacobi method.
-//
-// Given a known, diagonally dominant matrix A and a known vector b, we aim to
-// to find the vector x that satisfies the following equation:
-//
-//     Ax = b
-//
-// We first split the matrix A into the diagonal D and the remainder R:
-//
-//     (D + R)x = b
-//
-// We then rearrange to form an iterative solution:
-//
-//     x' = (b - Rx) / D
-//
-// More information:
-// -> https://en.wikipedia.org/wiki/Jacobi_method
-//
-
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <sys/time.h>
+#include <omp.h>
 
 static int N;
 static int MAX_ITERATIONS;
@@ -53,6 +34,7 @@ int run(double *A, double *b, double *x, double *xtmp)
   do
   {
     // Perfom Jacobi iteration
+    #pragma omp parallel for private(dot, col)
     for (row = 0; row < N; row++)
     {
       dot = 0.0;
@@ -71,6 +53,7 @@ int run(double *A, double *b, double *x, double *xtmp)
 
     // Check for convergence
     sqdiff = 0.0;
+    #pragma omp parallel for reduction(+:sqdiff) private(diff)
     for (row = 0; row < N; row++)
     {
       diff    = xtmp[row] - x[row];
